@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14614E2D28A28BFA002301B0 /* SceneOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14614E2C28A28BFA002301B0 /* SceneOpening.swift */; };
 		4BC39514282A96B900FE775C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC39513282A96B900FE775C /* AppDelegate.swift */; };
 		4BC39516282A96B900FE775C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4BC39515282A96B900FE775C /* GameScene.sks */; };
 		4BC39518282A96B900FE775C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4BC39517282A96B900FE775C /* Actions.sks */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14614E2C28A28BFA002301B0 /* SceneOpening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneOpening.swift; sourceTree = "<group>"; };
 		4BC39510282A96B900FE775C /* minigames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = minigames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC39513282A96B900FE775C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BC39515282A96B900FE775C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				4BC3951D282A96B900FE775C /* Main.storyboard */,
 				4BC39520282A96BA00FE775C /* Assets.xcassets */,
 				4BC39522282A96BA00FE775C /* LaunchScreen.storyboard */,
+				14614E2C28A28BFA002301B0 /* SceneOpening.swift */,
 			);
 			path = minigames;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				4BC3951A282A96B900FE775C /* GameScene.swift in Sources */,
 				4BC3951C282A96B900FE775C /* GameViewController.swift in Sources */,
 				4BC39514282A96B900FE775C /* AppDelegate.swift in Sources */,
+				14614E2D28A28BFA002301B0 /* SceneOpening.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +297,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5JCA2V9H3D;
+				DEVELOPMENT_TEAM = 4957F54262;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -321,7 +325,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5JCA2V9H3D;
+				DEVELOPMENT_TEAM = 4957F54262;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
