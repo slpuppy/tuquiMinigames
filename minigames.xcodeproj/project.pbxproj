@@ -7,26 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BBE66B3283B22F7002E91F6 /* AmethystShine.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE66B2283B22F7002E91F6 /* AmethystShine.atlas */; };
+		4BBE66B9283B235C002E91F6 /* PearlShine.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE66B8283B235C002E91F6 /* PearlShine.atlas */; };
+		4BBE66BC283B2380002E91F6 /* RubyShine.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE66BB283B2380002E91F6 /* RubyShine.atlas */; };
+		4BBE66BE283B2393002E91F6 /* SaphireShine.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE66BD283B2393002E91F6 /* SaphireShine.atlas */; };
+		4BBE66C0283B2901002E91F6 /* DiamondShine.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE66BF283B2901002E91F6 /* DiamondShine.atlas */; };
 		4BC39514282A96B900FE775C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC39513282A96B900FE775C /* AppDelegate.swift */; };
-		4BC39516282A96B900FE775C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4BC39515282A96B900FE775C /* GameScene.sks */; };
-		4BC39518282A96B900FE775C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4BC39517282A96B900FE775C /* Actions.sks */; };
-		4BC3951A282A96B900FE775C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC39519282A96B900FE775C /* GameScene.swift */; };
+		4BC39516282A96B900FE775C /* PolishCrystal.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4BC39515282A96B900FE775C /* PolishCrystal.sks */; };
+		4BC3951A282A96B900FE775C /* PolishCrystal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC39519282A96B900FE775C /* PolishCrystal.swift */; };
 		4BC3951C282A96B900FE775C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3951B282A96B900FE775C /* GameViewController.swift */; };
-		4BC3951F282A96B900FE775C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC3951D282A96B900FE775C /* Main.storyboard */; };
 		4BC39521282A96BA00FE775C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC39520282A96BA00FE775C /* Assets.xcassets */; };
 		4BC39524282A96BA00FE775C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC39522282A96BA00FE775C /* LaunchScreen.storyboard */; };
+		4BC63D2A2831E22F001F6F7D /* shine.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4BC63D292831E22F001F6F7D /* shine.atlas */; };
+		75824BEC28A14ADA0074FDE6 /* GameSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824BEB28A14ADA0074FDE6 /* GameSelectViewController.swift */; };
+		75824BEF28A289F80074FDE6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 75824BEE28A289F80074FDE6 /* SnapKit */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		75824BF328A28DA60074FDE6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4BBE66B2283B22F7002E91F6 /* AmethystShine.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = AmethystShine.atlas; sourceTree = "<group>"; };
+		4BBE66B8283B235C002E91F6 /* PearlShine.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = PearlShine.atlas; sourceTree = "<group>"; };
+		4BBE66BB283B2380002E91F6 /* RubyShine.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = RubyShine.atlas; sourceTree = "<group>"; };
+		4BBE66BD283B2393002E91F6 /* SaphireShine.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = SaphireShine.atlas; sourceTree = "<group>"; };
+		4BBE66BF283B2901002E91F6 /* DiamondShine.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = DiamondShine.atlas; sourceTree = "<group>"; };
 		4BC39510282A96B900FE775C /* minigames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = minigames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC39513282A96B900FE775C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4BC39515282A96B900FE775C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		4BC39517282A96B900FE775C /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		4BC39519282A96B900FE775C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		4BC39515282A96B900FE775C /* PolishCrystal.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PolishCrystal.sks; sourceTree = "<group>"; };
+		4BC39519282A96B900FE775C /* PolishCrystal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolishCrystal.swift; sourceTree = "<group>"; };
 		4BC3951B282A96B900FE775C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		4BC3951E282A96B900FE775C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BC39520282A96BA00FE775C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BC39523282A96BA00FE775C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4BC63D292831E22F001F6F7D /* shine.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = shine.atlas; sourceTree = "<group>"; };
+		75824BEB28A14ADA0074FDE6 /* GameSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75824BEF28A289F80074FDE6 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,15 +85,36 @@
 			isa = PBXGroup;
 			children = (
 				4BC39513282A96B900FE775C /* AppDelegate.swift */,
-				4BC39515282A96B900FE775C /* GameScene.sks */,
-				4BC39517282A96B900FE775C /* Actions.sks */,
-				4BC39519282A96B900FE775C /* GameScene.swift */,
+				75824BEB28A14ADA0074FDE6 /* GameSelectViewController.swift */,
 				4BC3951B282A96B900FE775C /* GameViewController.swift */,
-				4BC3951D282A96B900FE775C /* Main.storyboard */,
 				4BC39520282A96BA00FE775C /* Assets.xcassets */,
+				4BF31ACB282BE857005D4613 /* PolishCrystal */,
+				75824BEA28A1392F0074FDE6 /* Shines */,
 				4BC39522282A96BA00FE775C /* LaunchScreen.storyboard */,
 			);
 			path = minigames;
+			sourceTree = "<group>";
+		};
+		4BF31ACB282BE857005D4613 /* PolishCrystal */ = {
+			isa = PBXGroup;
+			children = (
+				4BC39515282A96B900FE775C /* PolishCrystal.sks */,
+				4BC39519282A96B900FE775C /* PolishCrystal.swift */,
+			);
+			path = PolishCrystal;
+			sourceTree = "<group>";
+		};
+		75824BEA28A1392F0074FDE6 /* Shines */ = {
+			isa = PBXGroup;
+			children = (
+				4BBE66B2283B22F7002E91F6 /* AmethystShine.atlas */,
+				4BBE66BF283B2901002E91F6 /* DiamondShine.atlas */,
+				4BBE66B8283B235C002E91F6 /* PearlShine.atlas */,
+				4BBE66BB283B2380002E91F6 /* RubyShine.atlas */,
+				4BBE66BD283B2393002E91F6 /* SaphireShine.atlas */,
+				4BC63D292831E22F001F6F7D /* shine.atlas */,
+			);
+			path = Shines;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,12 +127,16 @@
 				4BC3950C282A96B900FE775C /* Sources */,
 				4BC3950D282A96B900FE775C /* Frameworks */,
 				4BC3950E282A96B900FE775C /* Resources */,
+				75824BF328A28DA60074FDE6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = minigames;
+			packageProductDependencies = (
+				75824BEE28A289F80074FDE6 /* SnapKit */,
+			);
 			productName = minigames;
 			productReference = 4BC39510282A96B900FE775C /* minigames.app */;
 			productType = "com.apple.product-type.application";
@@ -115,6 +165,9 @@
 				Base,
 			);
 			mainGroup = 4BC39507282A96B900FE775C;
+			packageReferences = (
+				75824BED28A289F70074FDE6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 4BC39511282A96B900FE775C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,11 +182,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BC3951F282A96B900FE775C /* Main.storyboard in Resources */,
-				4BC39516282A96B900FE775C /* GameScene.sks in Resources */,
+				4BBE66C0283B2901002E91F6 /* DiamondShine.atlas in Resources */,
+				4BC63D2A2831E22F001F6F7D /* shine.atlas in Resources */,
+				4BBE66B9283B235C002E91F6 /* PearlShine.atlas in Resources */,
+				4BC39516282A96B900FE775C /* PolishCrystal.sks in Resources */,
+				4BBE66BC283B2380002E91F6 /* RubyShine.atlas in Resources */,
+				4BBE66B3283B22F7002E91F6 /* AmethystShine.atlas in Resources */,
+				4BBE66BE283B2393002E91F6 /* SaphireShine.atlas in Resources */,
 				4BC39521282A96BA00FE775C /* Assets.xcassets in Resources */,
 				4BC39524282A96BA00FE775C /* LaunchScreen.storyboard in Resources */,
-				4BC39518282A96B900FE775C /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,8 +201,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BC3951A282A96B900FE775C /* GameScene.swift in Sources */,
+				4BC3951A282A96B900FE775C /* PolishCrystal.swift in Sources */,
 				4BC3951C282A96B900FE775C /* GameViewController.swift in Sources */,
+				75824BEC28A14ADA0074FDE6 /* GameSelectViewController.swift in Sources */,
 				4BC39514282A96B900FE775C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,14 +211,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4BC3951D282A96B900FE775C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4BC3951E282A96B900FE775C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4BC39522282A96BA00FE775C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -293,11 +343,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5JCA2V9H3D;
+				DEVELOPMENT_TEAM = C7K95G5W2H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -321,11 +370,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5JCA2V9H3D;
+				DEVELOPMENT_TEAM = C7K95G5W2H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -364,6 +412,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		75824BED28A289F70074FDE6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = exactVersion;
+				version = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		75824BEE28A289F80074FDE6 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 75824BED28A289F70074FDE6 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4BC39508282A96B900FE775C /* Project object */;
 }
