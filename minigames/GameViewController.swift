@@ -10,25 +10,15 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-
+    private let skScene = PolishCrystal()
+    var skView: SKView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "AlignCrystal") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
-            
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
-        }
+        view.backgroundColor = .yellow
+        let view = SKView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height))
+        skView = view
+        skView.backgroundColor = .red
     }
 
     override var shouldAutorotate: Bool {

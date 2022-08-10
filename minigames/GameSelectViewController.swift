@@ -7,6 +7,7 @@
 
 import SnapKit
 import UIKit
+import SpriteKit
 
 
 
@@ -16,6 +17,7 @@ class GameSelectViewController: UIViewController {
     lazy var minigame1Button: UIButton = {
         let button = UIButton()
         button.setTitle("Minigame1", for: .normal)
+        button.addTarget(self, action: #selector(openGame), for: .touchUpInside)
         
         return button
     }()
@@ -47,8 +49,7 @@ class GameSelectViewController: UIViewController {
     func presentButtons() {
         addButtons()
         setupButtons()
-  }
-    
+    }
     
     func addButtons(){
         self.view.addSubview(minigame1Button)
@@ -80,4 +81,11 @@ class GameSelectViewController: UIViewController {
             make.centerX.equalTo(self.view.frame.midX)
         }
     }
+    
+    @objc
+    func openGame() {
+        let gameViewController = GameViewController()
+        self.present(gameViewController, animated: true)
+    }
 }
+
