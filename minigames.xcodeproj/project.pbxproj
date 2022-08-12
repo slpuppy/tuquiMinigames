@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14614E2D28A28BFA002301B0 /* SceneOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14614E2C28A28BFA002301B0 /* SceneOpening.swift */; };
+		14255B6128A53F2600866C12 /* UiViewControllerExtension+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14255B6028A53F2600866C12 /* UiViewControllerExtension+.swift */; };
+		14255B6328A5416100866C12 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14255B6228A5416100866C12 /* UINavigationController.swift */; };
 		4BBE66B3283B22F7002E91F6 /* AmethystShine.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE66B2283B22F7002E91F6 /* AmethystShine.atlas */; };
 		4BBE66B9283B235C002E91F6 /* PearlShine.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE66B8283B235C002E91F6 /* PearlShine.atlas */; };
 		4BBE66BC283B2380002E91F6 /* RubyShine.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE66BB283B2380002E91F6 /* RubyShine.atlas */; };
@@ -38,7 +39,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		14614E2C28A28BFA002301B0 /* SceneOpening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneOpening.swift; sourceTree = "<group>"; };
+		14255B6028A53F2600866C12 /* UiViewControllerExtension+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewControllerExtension+.swift"; sourceTree = "<group>"; };
+		14255B6228A5416100866C12 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		4BBE66B2283B22F7002E91F6 /* AmethystShine.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = AmethystShine.atlas; sourceTree = "<group>"; };
 		4BBE66B8283B235C002E91F6 /* PearlShine.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = PearlShine.atlas; sourceTree = "<group>"; };
 		4BBE66BB283B2380002E91F6 /* RubyShine.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = RubyShine.atlas; sourceTree = "<group>"; };
@@ -67,6 +69,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14255B5F28A53F1100866C12 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				14255B6028A53F2600866C12 /* UiViewControllerExtension+.swift */,
+				14255B6228A5416100866C12 /* UINavigationController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4BC39507282A96B900FE775C = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +97,7 @@
 		4BC39512282A96B900FE775C /* minigames */ = {
 			isa = PBXGroup;
 			children = (
+				14255B5F28A53F1100866C12 /* Extensions */,
 				4BC39513282A96B900FE775C /* AppDelegate.swift */,
 				75824BEB28A14ADA0074FDE6 /* GameSelectViewController.swift */,
 				4BC3951B282A96B900FE775C /* GameViewController.swift */,
@@ -93,7 +105,6 @@
 				4BF31ACB282BE857005D4613 /* PolishCrystal */,
 				75824BEA28A1392F0074FDE6 /* Shines */,
 				4BC39522282A96BA00FE775C /* LaunchScreen.storyboard */,
-				14614E2C28A28BFA002301B0 /* SceneOpening.swift */,
 			);
 			path = minigames;
 			sourceTree = "<group>";
@@ -204,11 +215,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14255B6128A53F2600866C12 /* UiViewControllerExtension+.swift in Sources */,
 				4BC3951A282A96B900FE775C /* PolishCrystal.swift in Sources */,
 				4BC3951C282A96B900FE775C /* GameViewController.swift in Sources */,
+				14255B6328A5416100866C12 /* UINavigationController.swift in Sources */,
 				75824BEC28A14ADA0074FDE6 /* GameSelectViewController.swift in Sources */,
 				4BC39514282A96B900FE775C /* AppDelegate.swift in Sources */,
-				14614E2D28A28BFA002301B0 /* SceneOpening.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
