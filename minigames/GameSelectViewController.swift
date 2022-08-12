@@ -85,7 +85,7 @@ class GameSelectViewController: UIViewController {
     @objc
     func openGame() {
         let gameViewController = GameViewController()
-        self.present(gameViewController, animated: true)
+        self.navigationController?.pushViewController(gameViewController, animated: true)
     }
 }
 
