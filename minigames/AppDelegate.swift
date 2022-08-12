@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         var navigationController = UINavigationController()
         navigationController = UINavigationController(rootViewController: GameSelectViewController())
+        navigationController.activeHidesBarsOnTap()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
