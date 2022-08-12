@@ -10,23 +10,23 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-    var scene: PolishCrystal!
+    private var scene: SKScene!
+    
+    init(scene: SKScene) {
+        self.scene = scene
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scene = PolishCrystal()
         openScene(scene: scene)
     }
 
     override var shouldAutorotate: Bool {
         return false
-    }
-
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
     }
 }

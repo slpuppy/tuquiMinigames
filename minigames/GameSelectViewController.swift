@@ -13,11 +13,17 @@ import SpriteKit
 
 class GameSelectViewController: UIViewController {
     
+    enum GameSceneType {
+        case maze, polishCrystal // TODO: Add new games
+    }
+    
+    private var currentGame: GameSceneType = .maze
     
     lazy var minigame1Button: UIButton = {
         let button = UIButton()
         button.setTitle("Minigame1", for: .normal)
-        button.addTarget(self, action: #selector(openGame), for: .touchUpInside)
+        button.addTarget(self, action: #selector(openGameVC), for: .touchUpInside)
+        currentGame = .polishCrystal
         
         return button
     }()
@@ -83,8 +89,16 @@ class GameSelectViewController: UIViewController {
     }
     
     @objc
-    func openGame() {
-        let gameViewController = GameViewController()
+    func openGameVC() {
+        var gameViewController = UIViewController()
+        
+        switch currentGame {
+        case .maze:
+            break
+        case .polishCrystal:
+           gameViewController = GameViewController(scene: PolishCrystal())
+        }
+
         self.navigationController?.pushViewController(gameViewController, animated: true)
     }
 }
