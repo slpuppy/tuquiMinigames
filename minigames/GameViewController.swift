@@ -10,19 +10,16 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-    private let skScene = PolishCrystal()
-    var skView: SKView!
+    var scene: PolishCrystal!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
-        let view = SKView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height))
-        skView = view
-        skView.backgroundColor = .red
+        scene = PolishCrystal()
+        openScene(scene: scene)
     }
 
     override var shouldAutorotate: Bool {
-        return true
+        return false
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -31,9 +28,5 @@ class GameViewController: UIViewController {
         } else {
             return .all
         }
-    }
-
-    override var prefersStatusBarHidden: Bool {
-        return true
     }
 }
