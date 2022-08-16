@@ -170,7 +170,6 @@
 		4BC39512282A96B900FE775C /* minigames */ = {
 			isa = PBXGroup;
 			children = (
-				14EC9D5928AA83E200D96910 /* Maze */,
 				4BC39513282A96B900FE775C /* AppDelegate.swift */,
 				75824BEB28A14ADA0074FDE6 /* GameSelectViewController.swift */,
 				4BC3951B282A96B900FE775C /* GameViewController.swift */,
@@ -210,6 +209,7 @@
 		75882BAE28AA8CDF005BD3B6 /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				14EC9D5928AA83E200D96910 /* Maze */,
 				75882BAB28AA8AD5005BD3B6 /* Limpar Cristais */,
 			);
 			path = Games;
@@ -471,7 +471,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C7K95G5W2H;
+				DEVELOPMENT_TEAM = 4957F54262;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -497,7 +497,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C7K95G5W2H;
+				DEVELOPMENT_TEAM = 4957F54262;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
