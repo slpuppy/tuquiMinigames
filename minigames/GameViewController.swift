@@ -1,9 +1,4 @@
-//
-//  GameViewController.swift
-//  minigames
-//
-//  Created by Alessandra Fernandes Lacerda on 10/05/22.
-//
+
 
 import UIKit
 import SpriteKit
@@ -25,6 +20,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         openScene(scene: scene)
+        
     }
     
     override var shouldAutorotate: Bool {

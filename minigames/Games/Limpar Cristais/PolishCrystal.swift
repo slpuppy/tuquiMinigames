@@ -2,73 +2,6 @@ import SpriteKit
 import GameplayKit
 
 
-class Crystal {
-    
-    var eraseEnable: Bool = false
-    var dirt1Removed: Bool = false
-    var cleaned: Bool = false
-    var crystalSprite: SKSpriteNode
-    var dirt1Sprite: SKSpriteNode
-    var dirt2Sprite: SKSpriteNode
-    var position: CGPoint
-    var spriteName: String
-    
-    var shine = SKSpriteNode()
-    var shineFrames: [SKTexture] = []
-    
-    init(crystalSprite: SKSpriteNode, dirt1Sprite: SKSpriteNode, dirt2Sprite: SKSpriteNode, position: CGPoint, spriteName: String) {
-        
-        self.crystalSprite = crystalSprite
-        self.dirt1Sprite = dirt1Sprite
-        self.dirt2Sprite = dirt2Sprite
-        self.position = position
-        self.spriteName = spriteName
-        
-        self.crystalSprite.position = self.position
-        self.crystalSprite.name = self.spriteName
-        
-        self.dirt1Sprite.zPosition = 2
-        self.dirt1Sprite.alpha = 1
-        self.dirt1Sprite.position = self.position
-        
-        self.dirt2Sprite.zPosition = 1
-        self.dirt2Sprite.alpha = 1
-        self.dirt2Sprite.position = self.position
-        
-    }
-    
-    func buildShine() {
-        let shineAnimatedAtlas = SKTextureAtlas(named: spriteName+"Shine")
-        var frames: [SKTexture] = []
-        
-        let numImages = shineAnimatedAtlas.textureNames.count
-        for i in 1...numImages {
-            let shineTextureName = spriteName+"Shine\(i)"
-            frames.append(shineAnimatedAtlas.textureNamed(shineTextureName))
-        }
-        shineFrames = frames
-        
-        let firstFrameTexture = shineFrames[0]
-        shine = SKSpriteNode(texture: firstFrameTexture)
-        shine.position = position
-        shine.zPosition = 1
-        crystalSprite.addChild(shine)
-        
-    }
-    
-    func animateShine() {
-      shine.run(SKAction.repeatForever(
-        SKAction.animate(with: shineFrames,
-                         timePerFrame: 0.2,
-                         resize: false,
-                         restore: true)),
-        withKey:"shine")
-    }
-    
-    
-    
-}
-
 class PolishCrystal: SKScene {
     
     var crystals = [Crystal(crystalSprite: SKSpriteNode(imageNamed: "Amethyst"),
@@ -106,12 +39,30 @@ class PolishCrystal: SKScene {
     
     private var cloth: SKSpriteNode = SKSpriteNode(imageNamed: "Cloth")
     
+    private var tooltipManager: TooltipManager!
+    
+  
+    
     private var movingNode: SKSpriteNode?
     
     
 
     override func didMove(to view: SKView) {
+        
         positionCrystals()
+        tooltipManager = TooltipManager(scene: self,
+                                        startPosition: CGPoint(x: -20, y: 250),
+                                        timeBetweenAnimations: 1,
+                                        animationType: .custom)
+        
+        tooltipManager.buildCustomAction(positions:[
+        CGPoint(x: 20, y: 250),
+        CGPoint(x: -20, y: 250),
+        CGPoint(x: 20, y: 250),
+        ], timeBetweenPositions: 0.5)
+        
+        tooltipManager.startAnimation()
+        
         
         self.cloth.size = CGSize(width: 50, height: 176)
         self.cloth.position = CGPoint(x: 0, y: -300)
@@ -130,34 +81,7 @@ class PolishCrystal: SKScene {
         
     }
     
-//    func buildShine(crystal: Crystal) {
-//        let shineAnimatedAtlas = SKTextureAtlas(named: "shine")
-//        var frames: [SKTexture] = []
-//
-//        let numImages = shineAnimatedAtlas.textureNames.count
-//        for i in 1...numImages {
-//            let shineTextureName = "shine\(i)"
-//            frames.append(shineAnimatedAtlas.textureNamed(shineTextureName))
-//        }
-//        crystal.shineFrames = frames
-//
-//        let firstFrameTexture = crystal.shineFrames[0]
-//        crystal.shine = SKSpriteNode(texture: firstFrameTexture)
-//        crystal.shine.position = CGPoint(x: frame.midX, y: frame.midY)
-//        crystal.shine.size = CGSize(width: 200, height: 200)
-//        crystal.shine.zPosition = 1
-//        crystal.shine.alpha = 0
-//        self.addChild(crystal.shine)
-//    }
-//
-//    func animateShine() {
-//      shine.run(SKAction.repeatForever(
-//        SKAction.animate(with: shineFrames,
-//                         timePerFrame: 0.2,
-//                         resize: false,
-//                         restore: true)),
-//        withKey:"shine")
-//    }
+
     
     func checkTaskCompleted() -> Bool {
         for crystal in crystals {
@@ -206,7 +130,7 @@ class PolishCrystal: SKScene {
                         
                         crystals[i].cleaned = true
                         
-                        crystals[i].buildShine()
+                        crystals[i].buildShine(scene: self)
                         crystals[i].animateShine()
   
                     }

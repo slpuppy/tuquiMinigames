@@ -37,6 +37,10 @@
 		4BC63D2A2831E22F001F6F7D /* shine.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4BC63D292831E22F001F6F7D /* shine.atlas */; };
 		75824BEC28A14ADA0074FDE6 /* GameSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75824BEB28A14ADA0074FDE6 /* GameSelectViewController.swift */; };
 		75824BEF28A289F80074FDE6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 75824BEE28A289F80074FDE6 /* SnapKit */; };
+		75882BAD28AA8B00005BD3B6 /* Crystal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75882BAC28AA8B00005BD3B6 /* Crystal.swift */; };
+		75882BB028ABCCB8005BD3B6 /* TooltipManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75882BAF28ABCCB8005BD3B6 /* TooltipManager.swift */; };
+		75882BB228ABDC35005BD3B6 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75882BB128ABDC35005BD3B6 /* HapticsManager.swift */; };
+		75882BB428ABDC6E005BD3B6 /* CoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75882BB328ABDC6E005BD3B6 /* CoreHapticsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -83,6 +87,10 @@
 		4BC39523282A96BA00FE775C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BC63D292831E22F001F6F7D /* shine.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = shine.atlas; sourceTree = "<group>"; };
 		75824BEB28A14ADA0074FDE6 /* GameSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectViewController.swift; sourceTree = "<group>"; };
+		75882BAC28AA8B00005BD3B6 /* Crystal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crystal.swift; sourceTree = "<group>"; };
+		75882BAF28ABCCB8005BD3B6 /* TooltipManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipManager.swift; sourceTree = "<group>"; };
+		75882BB128ABDC35005BD3B6 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		75882BB328ABDC6E005BD3B6 /* CoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreHapticsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,25 +171,16 @@
 			isa = PBXGroup;
 			children = (
 				14EC9D5928AA83E200D96910 /* Maze */,
-				14255B5F28A53F1100866C12 /* Extensions */,
 				4BC39513282A96B900FE775C /* AppDelegate.swift */,
 				75824BEB28A14ADA0074FDE6 /* GameSelectViewController.swift */,
 				4BC3951B282A96B900FE775C /* GameViewController.swift */,
+				75882BAE28AA8CDF005BD3B6 /* Games */,
+				75882BB528ABDC9F005BD3B6 /* Utils */,
+				14255B5F28A53F1100866C12 /* Extensions */,
 				4BC39520282A96BA00FE775C /* Assets.xcassets */,
-				4BF31ACB282BE857005D4613 /* PolishCrystal */,
-				75824BEA28A1392F0074FDE6 /* Shines */,
 				4BC39522282A96BA00FE775C /* LaunchScreen.storyboard */,
 			);
 			path = minigames;
-			sourceTree = "<group>";
-		};
-		4BF31ACB282BE857005D4613 /* PolishCrystal */ = {
-			isa = PBXGroup;
-			children = (
-				4BC39515282A96B900FE775C /* PolishCrystal.sks */,
-				4BC39519282A96B900FE775C /* PolishCrystal.swift */,
-			);
-			path = PolishCrystal;
 			sourceTree = "<group>";
 		};
 		75824BEA28A1392F0074FDE6 /* Shines */ = {
@@ -195,6 +194,35 @@
 				4BC63D292831E22F001F6F7D /* shine.atlas */,
 			);
 			path = Shines;
+			sourceTree = "<group>";
+		};
+		75882BAB28AA8AD5005BD3B6 /* Limpar Cristais */ = {
+			isa = PBXGroup;
+			children = (
+				75824BEA28A1392F0074FDE6 /* Shines */,
+				4BC39515282A96B900FE775C /* PolishCrystal.sks */,
+				4BC39519282A96B900FE775C /* PolishCrystal.swift */,
+				75882BAC28AA8B00005BD3B6 /* Crystal.swift */,
+			);
+			path = "Limpar Cristais";
+			sourceTree = "<group>";
+		};
+		75882BAE28AA8CDF005BD3B6 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				75882BAB28AA8AD5005BD3B6 /* Limpar Cristais */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		75882BB528ABDC9F005BD3B6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				75882BAF28ABCCB8005BD3B6 /* TooltipManager.swift */,
+				75882BB128ABDC35005BD3B6 /* HapticsManager.swift */,
+				75882BB328ABDC6E005BD3B6 /* CoreHapticsManager.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +321,7 @@
 				14EC9D7228AA843000D96910 /* GameConstants.swift in Sources */,
 				14EC9D6E28AA841900D96910 /* MazeTileStatus.swift in Sources */,
 				14EC9D5728AA836100D96910 /* SKNode+Extensions.swift in Sources */,
+				75882BB228ABDC35005BD3B6 /* HapticsManager.swift in Sources */,
 				4BC3951A282A96B900FE775C /* PolishCrystal.swift in Sources */,
 				14EC9D5628AA836100D96910 /* CGPointVector+Extensions.swift in Sources */,
 				4BC3951C282A96B900FE775C /* GameViewController.swift in Sources */,
@@ -301,6 +330,9 @@
 				14EC9D6B28AA841900D96910 /* MazeTile.swift in Sources */,
 				4BC39514282A96B900FE775C /* AppDelegate.swift in Sources */,
 				14EC9D5828AA836100D96910 /* SKScene+Extensions.swift in Sources */,
+				75882BB028ABCCB8005BD3B6 /* TooltipManager.swift in Sources */,
+				75882BAD28AA8B00005BD3B6 /* Crystal.swift in Sources */,
+				75882BB428ABDC6E005BD3B6 /* CoreHapticsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +471,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4957F54262;
+				DEVELOPMENT_TEAM = C7K95G5W2H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -465,7 +497,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4957F54262;
+				DEVELOPMENT_TEAM = C7K95G5W2H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
