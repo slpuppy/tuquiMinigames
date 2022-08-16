@@ -39,6 +39,10 @@ class PolishCrystal: SKScene {
     
     private var cloth: SKSpriteNode = SKSpriteNode(imageNamed: "Cloth")
     
+    private var tooltipManager: TooltipManager!
+    
+  
+    
     private var movingNode: SKSpriteNode?
     
     
@@ -46,6 +50,20 @@ class PolishCrystal: SKScene {
     override func didMove(to view: SKView) {
         
         positionCrystals()
+        tooltipManager = TooltipManager(scene: self,
+                                        startPosition: CGPoint(x: -20, y: 250),
+                                        timeBetweenAnimations: 1,
+                                        animationType: .custom)
+        
+        tooltipManager.buildCustomAction(positions:[
+        CGPoint(x: 20, y: 250),
+        CGPoint(x: -20, y: 250),
+        CGPoint(x: 20, y: 250),
+        ], timeBetweenPositions: 0.5)
+        
+        tooltipManager.startAnimation()
+        
+        
         self.cloth.size = CGSize(width: 50, height: 176)
         self.cloth.position = CGPoint(x: 0, y: -300)
         self.cloth.zPosition = 3

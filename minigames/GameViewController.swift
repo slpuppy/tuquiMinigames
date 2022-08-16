@@ -1,9 +1,4 @@
-//
-//  GameViewController.swift
-//  minigames
-//
-//  Created by Alessandra Fernandes Lacerda on 10/05/22.
-//
+
 
 import UIKit
 import SpriteKit
