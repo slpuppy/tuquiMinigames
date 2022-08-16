@@ -22,7 +22,7 @@ class GameViewController: UIViewController {
         openScene(scene: scene)
         
     }
-
+    
     override var shouldAutorotate: Bool {
         return false
     }

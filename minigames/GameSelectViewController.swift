@@ -9,28 +9,20 @@ import SnapKit
 import UIKit
 import SpriteKit
 
-
-
 class GameSelectViewController: UIViewController {
     
-    enum GameSceneType {
-        case maze, polishCrystal // TODO: Add new games
-    }
-    
-    private var currentGame: GameSceneType = .maze
-    
-    lazy var minigame1Button: UIButton = {
+    lazy var polishCrystalButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Minigame1", for: .normal)
-        button.addTarget(self, action: #selector(openGameVC), for: .touchUpInside)
-        currentGame = .polishCrystal
+        button.setTitle("PolishCrystal", for: .normal)
+        button.addTarget(self, action: #selector(openPolishCrystal), for: .touchUpInside)
         
         return button
     }()
     
-    lazy var minigame2Button: UIButton = {
+    lazy var mazeButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Minigame2", for: .normal)
+        button.addTarget(self, action: #selector(openMaze), for: .touchUpInside)
+        button.setTitle("Maze", for: .normal)
         return button
     }()
     
@@ -46,7 +38,10 @@ class GameSelectViewController: UIViewController {
         return button
     }()
     
-  override func viewDidLoad() {
+    private var gameViewController = UIViewController()
+    
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         presentButtons()
@@ -58,47 +53,41 @@ class GameSelectViewController: UIViewController {
     }
     
     func addButtons(){
-        self.view.addSubview(minigame1Button)
-        self.view.addSubview(minigame2Button)
+        self.view.addSubview(polishCrystalButton)
+        self.view.addSubview(mazeButton)
         self.view.addSubview(minigame3Button)
         self.view.addSubview(minigame4Button)
     }
     
-    func setupButtons(){
-        minigame1Button.backgroundColor = .black
-        minigame2Button.backgroundColor = .black
+    func setupButtons() {
+        polishCrystalButton.backgroundColor = .black
+        mazeButton.backgroundColor = .black
         minigame3Button.backgroundColor = .black
         minigame4Button.backgroundColor = .black
         
-        minigame1Button.snp.makeConstraints { make in
-            make.top.equalTo(self.view.frame.maxY).offset(200)
-            make.centerX.equalTo(self.view.frame.midX)
-        }
-        minigame2Button.snp.makeConstraints { make in
-            make.top.equalTo(minigame1Button.snp.bottom).offset(50)
-            make.centerX.equalTo(self.view.frame.midX)
-        }
-        minigame3Button.snp.makeConstraints { make in
-            make.top.equalTo(minigame2Button.snp.bottom).offset(50)
-            make.centerX.equalTo(self.view.frame.midX)
-        }
-        minigame4Button.snp.makeConstraints { make in
-            make.top.equalTo(minigame3Button.snp.bottom).offset(50)
-            make.centerX.equalTo(self.view.frame.midX)
-        }
+        makeContraints(view: polishCrystalButton, anchorView: self.view, offSet: 200)
+        makeContraints(view: mazeButton, anchorView: polishCrystalButton, offSet: 50)
+        makeContraints(view: minigame3Button, anchorView: mazeButton, offSet: 50)
+        makeContraints(view: minigame4Button, anchorView: minigame3Button, offSet: 50)
     }
     
-    @objc
-    func openGameVC() {
-        var gameViewController = UIViewController()
-        
-        switch currentGame {
-        case .maze:
-            break
-        case .polishCrystal:
-           gameViewController = GameViewController(scene: PolishCrystal())
+    func makeContraints(view: UIView, anchorView: UIView, offSet: ConstraintOffsetTarget) {
+        view.snp.makeConstraints {
+            $0.top.equalTo(anchorView == self.view ? view.frame.maxY : anchorView.snp.bottom).offset(offSet)
+            $0.centerX.equalTo(self.view.frame.midX)
         }
+    }
+}
 
+@objc
+private extension GameSelectViewController {
+    func openPolishCrystal() {
+        gameViewController = GameViewController(scene: PolishCrystal())
+        self.navigationController?.pushViewController(gameViewController, animated: true)
+    }
+    
+    func openMaze() {
+        gameViewController = GameViewController(scene: MazeScene())
         self.navigationController?.pushViewController(gameViewController, animated: true)
     }
 }
