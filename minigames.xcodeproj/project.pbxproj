@@ -7,8 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14255B6128A53F2600866C12 /* UiViewControllerExtension+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14255B6028A53F2600866C12 /* UiViewControllerExtension+.swift */; };
-		14255B6328A5416100866C12 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14255B6228A5416100866C12 /* UINavigationController.swift */; };
+		14255B6128A53F2600866C12 /* UiViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14255B6028A53F2600866C12 /* UiViewControllerExtension.swift */; };
+		14255B6328A5416100866C12 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14255B6228A5416100866C12 /* UINavigationControllerExtension.swift */; };
+		14EC9D5628AA836100D96910 /* CGPointVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC9D5328AA836100D96910 /* CGPointVector+Extensions.swift */; };
+		14EC9D5728AA836100D96910 /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC9D5428AA836100D96910 /* SKNode+Extensions.swift */; };
+		14EC9D5828AA836100D96910 /* SKScene+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC9D5528AA836100D96910 /* SKScene+Extensions.swift */; };
+		14EC9D5B28AA83F400D96910 /* MazeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC9D5A28AA83F400D96910 /* MazeScene.swift */; };
+		14EC9D6928AA841900D96910 /* MazeTileTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC9D6128AA841900D96910 /* MazeTileTypes.swift */; };
+		14EC9D6A28AA841900D96910 /* GrowingTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC9D6228AA841900D96910 /* GrowingTree.swift */; };
+		14EC9D6B28AA841900D96910 /* MazeTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC9D6328AA841900D96910 /* MazeTile.swift */; };
+		14EC9D6C28AA841900D96910 /* WallEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC9D6428AA841900D96910 /* WallEnums.swift */; };
+		14EC9D6D28AA841900D96910 /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC9D6528AA841900D96910 /* Maze.swift */; };
+		14EC9D6E28AA841900D96910 /* MazeTileStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC9D6628AA841900D96910 /* MazeTileStatus.swift */; };
+		14EC9D7028AA842400D96910 /* CollisionMasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC9D6F28AA842400D96910 /* CollisionMasks.swift */; };
+		14EC9D7228AA843000D96910 /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC9D7128AA843000D96910 /* GameConstants.swift */; };
+		14EC9D7528AA847900D96910 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 14EC9D7328AA847900D96910 /* Actions.sks */; };
+		14EC9D7628AA847900D96910 /* MazeScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 14EC9D7428AA847900D96910 /* MazeScene.sks */; };
 		4BBE66B3283B22F7002E91F6 /* AmethystShine.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE66B2283B22F7002E91F6 /* AmethystShine.atlas */; };
 		4BBE66B9283B235C002E91F6 /* PearlShine.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE66B8283B235C002E91F6 /* PearlShine.atlas */; };
 		4BBE66BC283B2380002E91F6 /* RubyShine.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE66BB283B2380002E91F6 /* RubyShine.atlas */; };
@@ -39,8 +53,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		14255B6028A53F2600866C12 /* UiViewControllerExtension+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewControllerExtension+.swift"; sourceTree = "<group>"; };
-		14255B6228A5416100866C12 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		14255B6028A53F2600866C12 /* UiViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewControllerExtension.swift; sourceTree = "<group>"; };
+		14255B6228A5416100866C12 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
+		14EC9D5328AA836100D96910 /* CGPointVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPointVector+Extensions.swift"; sourceTree = "<group>"; };
+		14EC9D5428AA836100D96910 /* SKNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
+		14EC9D5528AA836100D96910 /* SKScene+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKScene+Extensions.swift"; sourceTree = "<group>"; };
+		14EC9D5A28AA83F400D96910 /* MazeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeScene.swift; sourceTree = "<group>"; };
+		14EC9D6128AA841900D96910 /* MazeTileTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeTileTypes.swift; sourceTree = "<group>"; };
+		14EC9D6228AA841900D96910 /* GrowingTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrowingTree.swift; sourceTree = "<group>"; };
+		14EC9D6328AA841900D96910 /* MazeTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeTile.swift; sourceTree = "<group>"; };
+		14EC9D6428AA841900D96910 /* WallEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallEnums.swift; sourceTree = "<group>"; };
+		14EC9D6528AA841900D96910 /* Maze.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maze.swift; sourceTree = "<group>"; };
+		14EC9D6628AA841900D96910 /* MazeTileStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeTileStatus.swift; sourceTree = "<group>"; };
+		14EC9D6F28AA842400D96910 /* CollisionMasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionMasks.swift; sourceTree = "<group>"; };
+		14EC9D7128AA843000D96910 /* GameConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
+		14EC9D7328AA847900D96910 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		14EC9D7428AA847900D96910 /* MazeScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MazeScene.sks; sourceTree = "<group>"; };
 		4BBE66B2283B22F7002E91F6 /* AmethystShine.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = AmethystShine.atlas; sourceTree = "<group>"; };
 		4BBE66B8283B235C002E91F6 /* PearlShine.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = PearlShine.atlas; sourceTree = "<group>"; };
 		4BBE66BB283B2380002E91F6 /* RubyShine.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = RubyShine.atlas; sourceTree = "<group>"; };
@@ -72,10 +100,47 @@
 		14255B5F28A53F1100866C12 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				14255B6028A53F2600866C12 /* UiViewControllerExtension+.swift */,
-				14255B6228A5416100866C12 /* UINavigationController.swift */,
+				14EC9D5328AA836100D96910 /* CGPointVector+Extensions.swift */,
+				14EC9D5428AA836100D96910 /* SKNode+Extensions.swift */,
+				14EC9D5528AA836100D96910 /* SKScene+Extensions.swift */,
+				14255B6028A53F2600866C12 /* UiViewControllerExtension.swift */,
+				14255B6228A5416100866C12 /* UINavigationControllerExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		14EC9D5928AA83E200D96910 /* Maze */ = {
+			isa = PBXGroup;
+			children = (
+				14EC9D7328AA847900D96910 /* Actions.sks */,
+				14EC9D7428AA847900D96910 /* MazeScene.sks */,
+				14EC9D5A28AA83F400D96910 /* MazeScene.swift */,
+				14EC9D6F28AA842400D96910 /* CollisionMasks.swift */,
+				14EC9D7128AA843000D96910 /* GameConstants.swift */,
+				14EC9D5C28AA841900D96910 /* Model */,
+			);
+			path = Maze;
+			sourceTree = "<group>";
+		};
+		14EC9D5C28AA841900D96910 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				14EC9D6028AA841900D96910 /* Maze */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14EC9D6028AA841900D96910 /* Maze */ = {
+			isa = PBXGroup;
+			children = (
+				14EC9D6128AA841900D96910 /* MazeTileTypes.swift */,
+				14EC9D6228AA841900D96910 /* GrowingTree.swift */,
+				14EC9D6328AA841900D96910 /* MazeTile.swift */,
+				14EC9D6428AA841900D96910 /* WallEnums.swift */,
+				14EC9D6528AA841900D96910 /* Maze.swift */,
+				14EC9D6628AA841900D96910 /* MazeTileStatus.swift */,
+			);
+			path = Maze;
 			sourceTree = "<group>";
 		};
 		4BC39507282A96B900FE775C = {
@@ -97,6 +162,7 @@
 		4BC39512282A96B900FE775C /* minigames */ = {
 			isa = PBXGroup;
 			children = (
+				14EC9D5928AA83E200D96910 /* Maze */,
 				14255B5F28A53F1100866C12 /* Extensions */,
 				4BC39513282A96B900FE775C /* AppDelegate.swift */,
 				75824BEB28A14ADA0074FDE6 /* GameSelectViewController.swift */,
@@ -199,12 +265,14 @@
 				4BBE66C0283B2901002E91F6 /* DiamondShine.atlas in Resources */,
 				4BC63D2A2831E22F001F6F7D /* shine.atlas in Resources */,
 				4BBE66B9283B235C002E91F6 /* PearlShine.atlas in Resources */,
+				14EC9D7628AA847900D96910 /* MazeScene.sks in Resources */,
 				4BC39516282A96B900FE775C /* PolishCrystal.sks in Resources */,
 				4BBE66BC283B2380002E91F6 /* RubyShine.atlas in Resources */,
 				4BBE66B3283B22F7002E91F6 /* AmethystShine.atlas in Resources */,
 				4BBE66BE283B2393002E91F6 /* SaphireShine.atlas in Resources */,
 				4BC39521282A96BA00FE775C /* Assets.xcassets in Resources */,
 				4BC39524282A96BA00FE775C /* LaunchScreen.storyboard in Resources */,
+				14EC9D7528AA847900D96910 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,12 +283,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14255B6128A53F2600866C12 /* UiViewControllerExtension+.swift in Sources */,
+				14EC9D7028AA842400D96910 /* CollisionMasks.swift in Sources */,
+				14EC9D6C28AA841900D96910 /* WallEnums.swift in Sources */,
+				14EC9D6928AA841900D96910 /* MazeTileTypes.swift in Sources */,
+				14EC9D6A28AA841900D96910 /* GrowingTree.swift in Sources */,
+				14EC9D5B28AA83F400D96910 /* MazeScene.swift in Sources */,
+				14255B6128A53F2600866C12 /* UiViewControllerExtension.swift in Sources */,
+				14EC9D6D28AA841900D96910 /* Maze.swift in Sources */,
+				14EC9D7228AA843000D96910 /* GameConstants.swift in Sources */,
+				14EC9D6E28AA841900D96910 /* MazeTileStatus.swift in Sources */,
+				14EC9D5728AA836100D96910 /* SKNode+Extensions.swift in Sources */,
 				4BC3951A282A96B900FE775C /* PolishCrystal.swift in Sources */,
+				14EC9D5628AA836100D96910 /* CGPointVector+Extensions.swift in Sources */,
 				4BC3951C282A96B900FE775C /* GameViewController.swift in Sources */,
-				14255B6328A5416100866C12 /* UINavigationController.swift in Sources */,
+				14255B6328A5416100866C12 /* UINavigationControllerExtension.swift in Sources */,
 				75824BEC28A14ADA0074FDE6 /* GameSelectViewController.swift in Sources */,
+				14EC9D6B28AA841900D96910 /* MazeTile.swift in Sources */,
 				4BC39514282A96B900FE775C /* AppDelegate.swift in Sources */,
+				14EC9D5828AA836100D96910 /* SKScene+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
