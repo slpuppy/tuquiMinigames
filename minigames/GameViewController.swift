@@ -14,6 +14,7 @@ class GameViewController: UIViewController {
     
     init(scene: SKScene) {
         self.scene = scene
+        scene.scaleMode = .aspectFill
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -24,6 +25,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         openScene(scene: scene)
+        
     }
 
     override var shouldAutorotate: Bool {
