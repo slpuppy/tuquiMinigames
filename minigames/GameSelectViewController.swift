@@ -39,8 +39,7 @@ class GameSelectViewController: UIViewController {
     }()
     
     private var gameViewController = UIViewController()
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -82,13 +81,27 @@ class GameSelectViewController: UIViewController {
 @objc
 private extension GameSelectViewController {
     func openPolishCrystal() {
+    #warning("TODO: Need to change navigation")
         gameViewController = GameViewController(scene: PolishCrystal())
-        self.navigationController?.pushViewController(gameViewController, animated: true)
+        gameViewController.modalPresentationStyle = .fullScreen
+        self.present(gameViewController, animated: true)
     }
     
     func openMaze() {
-        gameViewController = GameViewController(scene: MazeScene())
-        self.navigationController?.pushViewController(gameViewController, animated: true)
+    #warning("TODO: Need to change navigation")
+        let mazeScene = MazeScene()
+        mazeScene.setupMaze(.hard, delegate: self)
+        gameViewController = GameViewController(scene: mazeScene)
+        gameViewController.modalPresentationStyle = .fullScreen
+        self.present(gameViewController, animated: true)
+    }
+}
+
+extension GameSelectViewController: MazeDelegate {
+    func finishGame() {
+    #warning("TODO: Need to change navigation")
+        self.dismiss(animated: true)
+        // TODO: Call NFC reader/ dismiss/ delivery track
     }
 }
 
