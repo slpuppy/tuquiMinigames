@@ -18,7 +18,7 @@ class GameConstants {
     
     private init() {
         ballRadius = 15 
-        wallWidth = 3
+        wallWidth = 4
         tileSize = (ballRadius * 2) + (wallWidth * 2) + CGFloat(15)
     }
 }
