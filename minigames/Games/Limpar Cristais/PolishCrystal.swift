@@ -34,22 +34,37 @@ class PolishCrystal: SKScene {
                             position: CGPoint(x: 100, y: 100),
                             spriteName: "Pearl") ]
     
+    var randomPositions = [CGPoint(x: 50, y: -30),
+                           CGPoint(x: 200, y: -100),
+                           CGPoint(x: -100, y: -200),
+                           CGPoint(x: 150, y: -280),
+                           CGPoint(x: 100, y: -350),
+                           CGPoint(x: -200, y: -420),
+                           CGPoint(x: -50, y: -90),
+                           CGPoint(x: 0, y: -500),
+                           CGPoint(x: -260, y: -550),
+                           CGPoint(x: -150, y: -240),]
+
+    
     
     private var taskCompleted = false
     
     private var cloth: SKSpriteNode = SKSpriteNode(imageNamed: "Cloth")
     
-    private var tooltipManager: TooltipManager!
+    private var gameBackground: SKSpriteNode = SKSpriteNode(imageNamed: "background")
     
-  
+    private var gameTitle: SKSpriteNode = SKSpriteNode(imageNamed: "minigame1title")
+    
+    private var gameCompleted: SKSpriteNode = SKSpriteNode(imageNamed: "")
+    
+    private var tooltipManager: TooltipManager!
     
     private var movingNode: SKSpriteNode?
     
-    
-
     override func didMove(to view: SKView) {
         
         positionCrystals()
+        setupGameTitle()
         tooltipManager = TooltipManager(scene: self,
                                         startPosition: CGPoint(x: -20, y: 250),
                                         timeBetweenAnimations: 1,
@@ -65,22 +80,81 @@ class PolishCrystal: SKScene {
         
         
         self.cloth.size = CGSize(width: 50, height: 176)
-        self.cloth.position = CGPoint(x: 0, y: -300)
+        self.cloth.position = CGPoint(x: 0, y: 175)
         self.cloth.zPosition = 3
+        self.gameBackground.zPosition = -1
+        self.gameBackground.position = CGPoint(x: 0, y: 0)
+        self.gameBackground.setScale(1.8)
+        self.addChild(self.gameBackground)
         self.addChild(self.cloth)
         
     }
     
+    func placeAtRandomPoint(sprite: Crystal) {
+       
+       let crystal = sprite.crystalSprite
+        let dirt = sprite.dirt1Sprite
+        let dirt2 = sprite.dirt2Sprite
+        randomPositions.shuffle()
+        if let randomPosition = randomPositions.first {
+            crystal.position = randomPosition
+            dirt.position = crystal.position
+            dirt2.position = crystal.position
+            self.addChild(crystal)
+            self.addChild(dirt)
+            self.addChild(dirt2)
+            randomPositions.removeFirst()
+        }
+      
+    }
+    
+    func alignCrystalsAtEnd(sprite: Crystal) {
+        for crystal in crystals {
+            let move = SKAction.moveTo(y: 50, duration: 0.5)
+            crystal.crystalSprite.run(move)
+        }
+   }
+    
+
+    
     func positionCrystals() {
         
         for crystal in crystals {
-            self.addChild(crystal.crystalSprite)
-            self.addChild(crystal.dirt1Sprite)
-            self.addChild(crystal.dirt2Sprite)
+            placeAtRandomPoint(sprite: crystal)
         }
         
     }
     
+    func setupTaskCompleted() {
+        if taskCompleted {
+            cloth.run(.fadeOut(withDuration: 0.3))
+            gameTitle.run(.fadeOut(withDuration: 0.3))
+            
+            
+            
+            
+            
+        }
+    }
+    
+    
+    
+    
+    func setupGameTitle() {
+        gameTitle.position = CGPoint(x: 0, y: 390)
+        gameTitle.setScale(1.6)
+        gameTitle.zPosition = 10
+        gameTitle.alpha = 0
+        gameTitle.run(.fadeIn(withDuration: 1.2))
+        self.addChild(gameTitle)
+    }
+    
+    func triggerNFC(){
+        let completed = checkTaskCompleted()
+        if completed == true {
+            
+        }
+    }
 
     
     func checkTaskCompleted() -> Bool {
@@ -95,6 +169,8 @@ class PolishCrystal: SKScene {
     }
     
     func touchDown(atPoint pos : CGPoint) {
+        
+        tooltipManager.stopAnimation()
         
         if self.cloth.contains(pos) {
             self.movingNode = self.cloth
@@ -147,7 +223,7 @@ class PolishCrystal: SKScene {
  
         }
         
-        
+        print(self.cloth.position)
         
 
         
@@ -156,7 +232,7 @@ class PolishCrystal: SKScene {
     func touchUp(atPoint pos : CGPoint) {
         
         if self.movingNode != nil {
-            self.cloth.position = CGPoint(x: 0, y: -300)
+            self.cloth.position = CGPoint(x: 0, y: 175)
             self.movingNode = nil
         }
     }
@@ -180,6 +256,6 @@ class PolishCrystal: SKScene {
     
     
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
+        setupTaskCompleted()
     }
 }
