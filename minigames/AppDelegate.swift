@@ -7,13 +7,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        var navigationController = UINavigationController()
-        navigationController = UINavigationController(rootViewController: GameSelectViewController())
-        navigationController.activeHidesBarsOnTap()
 
+        let gameViewController = GameSelectViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navigationController
+        window?.rootViewController = gameViewController
         window?.makeKeyAndVisible()
         
         return true
