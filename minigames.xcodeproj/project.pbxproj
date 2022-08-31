@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		14255B6128A53F2600866C12 /* UiViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14255B6028A53F2600866C12 /* UiViewControllerExtension.swift */; };
 		14255B6328A5416100866C12 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14255B6228A5416100866C12 /* UINavigationControllerExtension.swift */; };
+		1430630128BE4C5300F5CA70 /* GameStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430630028BE4C5300F5CA70 /* GameStartViewController.swift */; };
+		1430636C28BEDAC400F5CA70 /* QuimbyMayoral.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1430636B28BEDAC400F5CA70 /* QuimbyMayoral.ttf */; };
+		1430636F28BF89B900F5CA70 /* MiniGamesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430636E28BF89B900F5CA70 /* MiniGamesType.swift */; };
+		146C227728AD1E4A006ED094 /* MazeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C227628AD1E4A006ED094 /* MazeType.swift */; };
+		14DFA3F728AFC377007DB40D /* MazeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DFA3F628AFC377007DB40D /* MazeDelegate.swift */; };
 		14EC9D5628AA836100D96910 /* CGPointVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC9D5328AA836100D96910 /* CGPointVector+Extensions.swift */; };
 		14EC9D5728AA836100D96910 /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC9D5428AA836100D96910 /* SKNode+Extensions.swift */; };
 		14EC9D5828AA836100D96910 /* SKScene+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC9D5528AA836100D96910 /* SKScene+Extensions.swift */; };
@@ -59,6 +64,12 @@
 /* Begin PBXFileReference section */
 		14255B6028A53F2600866C12 /* UiViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewControllerExtension.swift; sourceTree = "<group>"; };
 		14255B6228A5416100866C12 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
+		1430630028BE4C5300F5CA70 /* GameStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartViewController.swift; sourceTree = "<group>"; };
+		1430636B28BEDAC400F5CA70 /* QuimbyMayoral.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = QuimbyMayoral.ttf; sourceTree = "<group>"; };
+		1430636D28BEDAE800F5CA70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1430636E28BF89B900F5CA70 /* MiniGamesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGamesType.swift; sourceTree = "<group>"; };
+		146C227628AD1E4A006ED094 /* MazeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeType.swift; sourceTree = "<group>"; };
+		14DFA3F628AFC377007DB40D /* MazeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeDelegate.swift; sourceTree = "<group>"; };
 		14EC9D5328AA836100D96910 /* CGPointVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPointVector+Extensions.swift"; sourceTree = "<group>"; };
 		14EC9D5428AA836100D96910 /* SKNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
 		14EC9D5528AA836100D96910 /* SKScene+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKScene+Extensions.swift"; sourceTree = "<group>"; };
@@ -117,6 +128,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1430636A28BEDA9F00F5CA70 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1430636B28BEDAC400F5CA70 /* QuimbyMayoral.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		14EC9D5928AA83E200D96910 /* Maze */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,8 +143,10 @@
 				14EC9D7428AA847900D96910 /* MazeScene.sks */,
 				14EC9D5A28AA83F400D96910 /* MazeScene.swift */,
 				14EC9D6F28AA842400D96910 /* CollisionMasks.swift */,
+				146C227628AD1E4A006ED094 /* MazeType.swift */,
 				14EC9D7128AA843000D96910 /* GameConstants.swift */,
 				14EC9D5C28AA841900D96910 /* Model */,
+				14DFA3F628AFC377007DB40D /* MazeDelegate.swift */,
 			);
 			path = Maze;
 			sourceTree = "<group>";
@@ -170,9 +191,13 @@
 		4BC39512282A96B900FE775C /* minigames */ = {
 			isa = PBXGroup;
 			children = (
+				1430636D28BEDAE800F5CA70 /* Info.plist */,
+				1430636A28BEDA9F00F5CA70 /* Fonts */,
 				4BC39513282A96B900FE775C /* AppDelegate.swift */,
 				75824BEB28A14ADA0074FDE6 /* GameSelectViewController.swift */,
 				4BC3951B282A96B900FE775C /* GameViewController.swift */,
+				1430636E28BF89B900F5CA70 /* MiniGamesType.swift */,
+				1430630028BE4C5300F5CA70 /* GameStartViewController.swift */,
 				75882BAE28AA8CDF005BD3B6 /* Games */,
 				75882BB528ABDC9F005BD3B6 /* Utils */,
 				14255B5F28A53F1100866C12 /* Extensions */,
@@ -299,6 +324,7 @@
 				4BBE66B3283B22F7002E91F6 /* AmethystShine.atlas in Resources */,
 				4BBE66BE283B2393002E91F6 /* SaphireShine.atlas in Resources */,
 				4BC39521282A96BA00FE775C /* Assets.xcassets in Resources */,
+				1430636C28BEDAC400F5CA70 /* QuimbyMayoral.ttf in Resources */,
 				4BC39524282A96BA00FE775C /* LaunchScreen.storyboard in Resources */,
 				14EC9D7528AA847900D96910 /* Actions.sks in Resources */,
 			);
@@ -311,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1430630128BE4C5300F5CA70 /* GameStartViewController.swift in Sources */,
 				14EC9D7028AA842400D96910 /* CollisionMasks.swift in Sources */,
 				14EC9D6C28AA841900D96910 /* WallEnums.swift in Sources */,
 				14EC9D6928AA841900D96910 /* MazeTileTypes.swift in Sources */,
@@ -327,10 +354,13 @@
 				4BC3951C282A96B900FE775C /* GameViewController.swift in Sources */,
 				14255B6328A5416100866C12 /* UINavigationControllerExtension.swift in Sources */,
 				75824BEC28A14ADA0074FDE6 /* GameSelectViewController.swift in Sources */,
+				146C227728AD1E4A006ED094 /* MazeType.swift in Sources */,
 				14EC9D6B28AA841900D96910 /* MazeTile.swift in Sources */,
 				4BC39514282A96B900FE775C /* AppDelegate.swift in Sources */,
 				14EC9D5828AA836100D96910 /* SKScene+Extensions.swift in Sources */,
 				75882BB028ABCCB8005BD3B6 /* TooltipManager.swift in Sources */,
+				14DFA3F728AFC377007DB40D /* MazeDelegate.swift in Sources */,
+				1430636F28BF89B900F5CA70 /* MiniGamesType.swift in Sources */,
 				75882BAD28AA8B00005BD3B6 /* Crystal.swift in Sources */,
 				75882BB428ABDC6E005BD3B6 /* CoreHapticsManager.swift in Sources */,
 			);
@@ -470,9 +500,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4957F54262;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = minigames/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
@@ -482,7 +513,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.ale.minigames;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.eros.tuqui.studios.minigames;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -496,9 +527,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4957F54262;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = minigames/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
@@ -508,7 +540,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.ale.minigames;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.eros.tuqui.studios.minigames;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
