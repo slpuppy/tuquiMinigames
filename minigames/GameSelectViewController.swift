@@ -22,6 +22,7 @@ class GameSelectViewController: UIViewController {
     lazy var mazeButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(openMaze), for: .touchUpInside)
+        button.titleLabel?.font = UIFont(name: "QuimbyMayoral", size: 12)
         button.setTitle("Maze", for: .normal)
         return button
     }()
@@ -38,7 +39,8 @@ class GameSelectViewController: UIViewController {
         return button
     }()
     
-    private var gameViewController = UIViewController()
+    private var gameStarViewController = UIViewController()
+    private var currentMiniGame: MiniGameType = .maze
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,24 +78,26 @@ class GameSelectViewController: UIViewController {
             $0.centerX.equalTo(self.view.frame.midX)
         }
     }
+    
+    func gameStarter() {
+    #warning("TODO: Need to change navigation")
+    gameStarViewController = GameStartViewController(currentMiniGame: currentMiniGame)
+    gameStarViewController.modalPresentationStyle = .fullScreen
+    self.present(gameStarViewController, animated: true)
+    }
 }
 
 @objc
 private extension GameSelectViewController {
     func openPolishCrystal() {
-    #warning("TODO: Need to change navigation")
-        gameViewController = GameViewController(scene: PolishCrystal())
-        gameViewController.modalPresentationStyle = .fullScreen
-        self.present(gameViewController, animated: true)
+        currentMiniGame = .polyshCrystal
+        gameStarter()
     }
     
     func openMaze() {
+        currentMiniGame = .maze
+        gameStarter()
     #warning("TODO: Need to change navigation")
-        let mazeScene = MazeScene()
-        mazeScene.setupMaze(.hard, delegate: self)
-        gameViewController = GameViewController(scene: mazeScene)
-        gameViewController.modalPresentationStyle = .fullScreen
-        self.present(gameViewController, animated: true)
     }
 }
 
