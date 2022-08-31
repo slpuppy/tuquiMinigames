@@ -22,6 +22,7 @@ class GameSelectViewController: UIViewController {
     lazy var mazeButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(openMaze), for: .touchUpInside)
+        button.titleLabel?.font = UIFont(name: "QuimbyMayoral", size: 12)
         button.setTitle("Maze", for: .normal)
         return button
     }()
@@ -38,9 +39,9 @@ class GameSelectViewController: UIViewController {
         return button
     }()
     
-    private var gameViewController = UIViewController()
-    
-    
+    private var gameStarViewController = UIViewController()
+    private var currentMiniGame: MiniGameType = .maze
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -77,18 +78,34 @@ class GameSelectViewController: UIViewController {
             $0.centerX.equalTo(self.view.frame.midX)
         }
     }
+    
+    func gameStarter() {
+    #warning("TODO: Need to change navigation")
+    gameStarViewController = GameStartViewController(currentMiniGame: currentMiniGame)
+    gameStarViewController.modalPresentationStyle = .fullScreen
+    self.present(gameStarViewController, animated: true)
+    }
 }
 
 @objc
 private extension GameSelectViewController {
     func openPolishCrystal() {
-        gameViewController = GameViewController(scene: PolishCrystal())
-        self.navigationController?.pushViewController(gameViewController, animated: true)
+        currentMiniGame = .polyshCrystal
+        gameStarter()
     }
     
     func openMaze() {
-        gameViewController = GameViewController(scene: MazeScene())
-        self.navigationController?.pushViewController(gameViewController, animated: true)
+        currentMiniGame = .maze
+        gameStarter()
+    #warning("TODO: Need to change navigation")
+    }
+}
+
+extension GameSelectViewController: MazeDelegate {
+    func finishGame() {
+    #warning("TODO: Need to change navigation")
+        self.dismiss(animated: true)
+        // TODO: Call NFC reader/ dismiss/ delivery track
     }
 }
 

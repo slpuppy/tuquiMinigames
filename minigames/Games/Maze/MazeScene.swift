@@ -10,33 +10,29 @@ import SpriteKit
 import GameplayKit
 import CoreMotion
 
-class MazeScene: SKScene {
+final class MazeScene: SKScene {
     
-    var ballRadius: CGFloat = GameConstants.instance.ballRadius
+    // MARK: - Attributes
     
-    var ball: SKShapeNode!
-    var mazeRootNode: SKShapeNode!
-    
-    var wallWidth: CGFloat = GameConstants.instance.wallWidth
-    var tileSize: CGFloat = GameConstants.instance.tileSize
-    
-    var endingNodes: [SKShapeNode]! = []
-    
-    var cameraNode : SKCameraNode!
-    
-    var playing = true
-    
-    //        let mazeSize = CGSize(width: 11, height: 23)
-    let mazeSize = CGSize(width: 9, height: 19)
-    
-    var maxPosition: CGPoint!
-    
-    var counter: Int = 0
-    
-    var counterNode = SKLabelNode()
+    private var ballRadius: CGFloat = GameConstants.instance.ballRadius
+    private var ball: SKSpriteNode!
+    private var mazeRootNode: SKShapeNode!
+    private var wallWidth: CGFloat = GameConstants.instance.wallWidth
+    private var tileSize: CGFloat = GameConstants.instance.tileSize
+    private var endingNodes: [SKShapeNode]! = []
+    private var cameraNode : SKCameraNode!
+    private var playing = true
+    private var mazeSize = CGSize()
+    private var maxPosition = CGPoint()
+    private var counter: Int = 0
+    private var counterNode = SKLabelNode()
+    private var timer = Timer()
     
     private let motion = CMMotionManager()
-    private var timer: Timer!
+    
+    private weak var mazeDelegate: MazeDelegate?
+    
+    // MARK: - DidMove
     
     override func didMove(to view: SKView) {
         self.view?.ignoresSiblingOrder = true
@@ -51,7 +47,7 @@ class MazeScene: SKScene {
         
         scene?.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         
-        ball = SKShapeNode(circleOfRadius: ballRadius)
+        ball = SKSpriteNode(imageNamed: "wizardIcon")
         setBallProperties(ball: ball)
         scene?.addChild(ball)
         
@@ -68,37 +64,59 @@ class MazeScene: SKScene {
         counterNode.fontSize = 200
         counterNode.zPosition = 15
         counterNode.alpha = 0
+        
+        scene?.backgroundColor = UIColor(red: 18/255, green: 150/255, blue: 191/255, alpha: 1)
         scene?.addChild(counterNode)
     }
     
-    func startAccelerometers() {
-        // Make sure the accelerometer hardware is available.
-        if motion.isAccelerometerAvailable {
-            print("Creating timer...")
-            
-            motion.accelerometerUpdateInterval = 1.0 / 60.0  // 60 Hz
-            motion.startAccelerometerUpdates()
-            
-            // Configure a timer to fetch the data.
-            self.timer = Timer.scheduledTimer(withTimeInterval: (1.0/60.0),
-                                              repeats: true, block: { (timer) in
-                // Get the accelerometer data.
-                //print("Running timer iteration")
-                if let data = self.motion.accelerometerData {
-                    let x = data.acceleration.x
-                    let y = data.acceleration.y
-                    //let z = data.acceleration.z
-                    
-                    //print(x, y)
-                    
-                    // Use the accelerometer data in your app.
-                    self.updateGravity(data: CGVector(dx: x, dy: y))
-                    
-                }
-            })
+    func setupMaze(_ type: MazeType, delegate: MazeDelegate) {
+        mazeSize = type.difficult
+        mazeDelegate = delegate
+    }
+    
+    // MARK: - Overrides
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+
+        if let endingTile = checkGameEnding() {
+            mazeDelegate?.finishGame()
+            if playing {
+                print("Is playing")
+                endMap(tile: endingTile)
+            }
         }
     }
+}
 
+// MARK: - Private Methods
+
+private extension MazeScene {
+    
+    // MARK: - Touch Events
+    
+    func touchDown(atPoint pos: CGPoint) { }
+    
+    func touchMoved(toPoint pos: CGPoint) { }
+    
+    func touchUp(atPoint pos: CGPoint) { }
+        
+    // MARK: Setup Nodes
     
     func addMazeToNode(mazeRootNode: SKShapeNode, maze: Maze) {
         var position: CGPoint = .zero
@@ -115,20 +133,20 @@ class MazeScene: SKScene {
                 mazeRootNode.addChild(tileNode)
                 
                 if tile.type == .blank {
-                    tileNode.fillColor = .black
-                    tileNode.strokeColor = .black
+                    tileNode.fillColor = .clear
+                    tileNode.strokeColor = .clear
                 } else if tile.type == .completion {
-                    tileNode.fillColor = .yellow
-                    tileNode.strokeColor = .black
+                    tileNode.fillColor = UIColor(red: 194/255, green: 72/255, blue: 142/255, alpha: 1) // PINK
+                    tileNode.strokeColor = .clear
                     
                     endingNodes.append(tileNode)
                 } else if tile.type == .hole {
                     let holeNode = SKShapeNode(circleOfRadius: ballRadius)
-                    holeNode.fillColor = .white
+                    holeNode.fillColor = .clear
                     tileNode.addChild(holeNode)
                     
-                    tileNode.fillColor = .black
-                    tileNode.strokeColor = .black
+                    tileNode.fillColor = .clear
+                    tileNode.strokeColor = .clear
                 }
                 
                 // Add walls
@@ -173,7 +191,6 @@ class MazeScene: SKScene {
             
             tile.addChild(wallNode)
         }
-        
     }
     
     func addTopWall(tile: SKShapeNode) {
@@ -238,10 +255,8 @@ class MazeScene: SKScene {
         }
     }
     
-    
-    func setBallProperties(ball: SKShapeNode) {
-        ball.fillColor = .yellow
-        ball.strokeColor = .yellow
+    func setBallProperties(ball: SKSpriteNode) {
+        ball.setScale(1.7)
         ball.physicsBody = SKPhysicsBody(circleOfRadius: ballRadius)
         ball.physicsBody?.mass = 120
         ball.physicsBody?.friction = 0.66
@@ -251,8 +266,8 @@ class MazeScene: SKScene {
     }
     
     func setWallProperties(wall: SKShapeNode) {
-        wall.fillColor = .white
-        wall.strokeColor = .white
+        wall.fillColor = UIColor(red: 18/255, green: 8/255, blue: 7/255, alpha: 1) // Darkness
+        wall.strokeColor = UIColor(red: 18/255, green: 8/255, blue: 7/255, alpha: 1) // Darkness
         wall.physicsBody?.collisionBitMask = CollisionMasks.CollisionMapElement
         wall.physicsBody?.isDynamic = false
         wall.physicsBody?.allowsRotation = false
@@ -261,12 +276,42 @@ class MazeScene: SKScene {
         wall.name = "wall"
     }
     
+    // MARK: Setup Game
+    
+    func startAccelerometers() {
+        // Make sure the accelerometer hardware is available.
+        if motion.isAccelerometerAvailable {
+            print("Creating timer...")
+            
+            motion.accelerometerUpdateInterval = 1.0 / 60.0  // 60 Hz
+            motion.startAccelerometerUpdates()
+            
+            // Configure a timer to fetch the data.
+            self.timer = Timer.scheduledTimer(withTimeInterval: (1.0/60.0),
+                                              repeats: true, block: { (timer) in
+                // Get the accelerometer data.
+                //print("Running timer iteration")
+                if let data = self.motion.accelerometerData {
+                    let x = data.acceleration.x
+                    let y = data.acceleration.y
+                    //let z = data.acceleration.z
+                    
+                    //print(x, y)
+                    
+                    // Use the accelerometer data in your app.
+                    self.updateGravity(data: CGVector(dx: x, dy: y))
+                    
+                }
+            })
+        }
+    }
+
     func positionBall(inMaze maze: Maze) {
         let scenePosition = maze.startingPoint * tileSize
         ball.position = scenePosition
     }
     
-    fileprivate func createCameraNode(_ maze: Maze) {
+    func createCameraNode(_ maze: Maze) {
         let totalMazeWidth = tileSize * CGFloat(maze.width-1)
         let totalMazeHeight = tileSize * CGFloat(maze.height-1)
         
@@ -297,45 +342,6 @@ class MazeScene: SKScene {
         
     }
     
-    func touchDown(atPoint pos : CGPoint) {
-    }
-    
-    func touchMoved(toPoint pos : CGPoint) {
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
-    
-    override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-        //cameraNode.position = ball.position
-        
-        if let endingTile = checkGameEnding() {
-            print("Has ending")
-            if playing {
-                print("Is playing")
-                endMap(tile: endingTile)
-            }
-        }
-    }
-    
     func endMap(tile: SKShapeNode) {
         scene?.physicsWorld.gravity = .zero
         
@@ -359,6 +365,7 @@ class MazeScene: SKScene {
             self.counterNode.run(SKAction.fadeAlpha(to: 1, duration: 0.5))
             self.counterNode.text = self.counter.description
             
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.createMap(lastEndingPos: lastPosition)
             }
@@ -370,6 +377,7 @@ class MazeScene: SKScene {
         }
     }
     
+    @discardableResult
     func createMap(lastEndingPos: CGPoint) -> Maze {
         // Create a new map
         let endingPos: CGPoint = lastEndingPos == .zero ? maxPosition : .zero
@@ -380,9 +388,7 @@ class MazeScene: SKScene {
         return maze
     }
     
-    func checkGameEnding() -> SKShapeNode? {
-        return endingNodes.filter({ $0.contains(ball.position) }).first
-    }
+    func checkGameEnding() -> SKShapeNode? { endingNodes.filter({ $0.contains(ball.position) }).first }
     
     func updateGravity(data: CGVector) {
         var gravity = (data * 6.75 + (data.module() < 0.03 ? 0.0 : 0.5)) * (data.module() < 0.015 ? 0 : 1)
