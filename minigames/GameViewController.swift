@@ -19,8 +19,6 @@ class GameViewController: UIViewController {
         self.scene = scene
         scene.scaleMode = .aspectFill
         super.init(nibName: nil, bundle: nil)
-        
-        
     }
     
     required init?(coder: NSCoder) {
